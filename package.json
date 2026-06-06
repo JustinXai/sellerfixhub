@@ -2,6 +2,7 @@
   "name": "sellerfixhub",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": "20.x"
   },
@@ -23,8 +24,8 @@
     "check:conversion-paths": "node scripts/check-conversion-paths.mjs",
     "check:ai-readable": "node scripts/check-ai-readable-output.mjs",
     "check:gmc-money-cluster": "node scripts/check-gmc-money-cluster.mjs",
-    "validate": "npm run check:claims && npm run check:content && npm run check:links && npm run check:lead-form && npm run check:ui-content && npm run check:new-issues && npm run check:url-style && npm run check:issue-format && npm run check:thank-you && npm run check:conversion-paths && npm run check:ai-readable && npm run lint && npm run build",
-    "verify:online": "npm run validate && npm run smoke:external"
+    "validate": "pnpm run check:claims && pnpm run check:content && pnpm run check:links && pnpm run check:lead-form && pnpm run check:ui-content && pnpm run check:new-issues && pnpm run check:url-style && pnpm run check:issue-format && pnpm run check:thank-you && pnpm run check:conversion-paths && pnpm run check:ai-readable && pnpm run lint && pnpm run build",
+    "verify:online": "pnpm run validate && pnpm run smoke:external"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -38,6 +39,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "pnpm": "10.11.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

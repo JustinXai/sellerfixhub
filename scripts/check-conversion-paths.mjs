@@ -5,7 +5,7 @@
  * - TrackedLink and analytics helpers exist
  * - IssuePage uses source params on CTAs
  * - IssueMessageExplainer fires GA events
- * - Expert Matching page reads searchParams
+ * - Expert Matching page is static (searchParams removed for static export)
  * - No PII or message text is sent to GA
  * Exit code 1 if any check fails.
  */
@@ -87,22 +87,25 @@ check("IssueMessageExplainer fires expert_help_click",
 // Note: step 8 performs the authoritative privacy check for message text
 
 
-// 5. Expert Matching page reads searchParams
+// 5. Expert Matching page is static (searchParams removed for static export)
 console.log("\n[5] Checking Expert Matching page...");
 const expertPagePath = join(BASE_DIR, "src/app/services/expert-matching/page.tsx");
 const expertPageContent = readFileSync(expertPagePath, "utf-8");
-check("Expert Matching page reads searchParams",
-  expertPageContent.includes("searchParams"),
-  "searchParams not found in expert-matching page");
-check("Expert Matching page checks source=issue_page",
-  expertPageContent.includes("source") && expertPageContent.includes("issue_page"),
-  "source=issue_page check missing");
-check("Expert Matching page displays issue context",
-  expertPageContent.includes("Issue context") || expertPageContent.includes("Issue context"),
-  "Issue context display missing");
-check("Expert Matching page shows context conditionally",
-  expertPageContent.includes("showContext"),
-  "Conditional context display missing");
+check("Expert Matching page is a static component (no searchParams)",
+  !expertPageContent.includes("searchParams"),
+  "searchParams still present in expert-matching page");
+check("Expert Matching page does not destructure dynamic props",
+  !expertPageContent.includes("Props") || !expertPageContent.includes("searchParams"),
+  "Props interface with searchParams still present");
+check("Expert Matching page has a context note about issue pages",
+  expertPageContent.includes("Coming from an issue page"),
+  "Context note for issue page visitors missing");
+check("Expert Matching page uses correct Tally embed URL",
+  expertPageContent.includes("tally.so/embed/RGVlOQ"),
+  "Tally embed URL missing");
+check("Expert Matching page uses correct Tally fallback URL",
+  expertPageContent.includes("tally.so/r/RGVlOQ"),
+  "Tally fallback URL missing");
 
 // 6. Header uses TrackedLink for expert help
 console.log("\n[6] Checking Header CTA tracking...");
@@ -155,14 +158,7 @@ if (hasBooleanGuard) {
   hasErrors = true;
 }
 
-// 9. Tally URL unchanged
-console.log("\n[9] Checking Tally URL unchanged...");
-check("Expert Matching page uses correct Tally embed URL",
-  expertPageContent.includes("tally.so/embed/RGVlOQ"),
-  "Tally embed URL modified");
-check("Expert Matching page uses correct Tally fallback URL",
-  expertPageContent.includes("tally.so/r/RGVlOQ"),
-  "Tally fallback URL modified");
+// 9. Tally URL unchanged (moved to step 5)
 
 // Summary
 console.log("\n" + "=".repeat(60));
