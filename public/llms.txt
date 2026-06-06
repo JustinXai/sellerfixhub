@@ -1,0 +1,72 @@
+# SellerFixHub
+
+## Site Name
+SellerFixHub
+
+## Site Purpose
+SellerFixHub helps online sellers understand product rejections, Google Merchant Center feed errors, TikTok Shop violations, and what evidence to prepare before requesting a review or appeal. It provides plain-English explanations of platform issue messages and connects sellers with independent experts.
+
+## Site URL
+https://sellerfixhub.com
+
+## Core Categories
+- Google Merchant Center Issues
+- TikTok Shop Violations
+- Issue Message Explainer Tool
+- Expert Matching
+
+## Key Pages
+- / (Home)
+- /about
+- /contact
+- /disclaimer
+- /platforms/google-merchant-center
+- /platforms/tiktok-shop
+- /tools/issue-message-explainer
+- /services/expert-matching
+- /google-merchant-center/misrepresentation
+- /google-merchant-center/product-disapproved
+- /google-merchant-center/invalid-gtin
+- /google-merchant-center/price-mismatch
+- /google-merchant-center/account-suspended
+- /google-merchant-center/request-review
+- /google-merchant-center/availability-mismatch
+- /google-merchant-center/missing-shipping-policy
+- /google-merchant-center/return-policy-missing
+- /google-merchant-center/website-needs-improvement
+- /google-merchant-center/shipping-cost-mismatch
+- /google-merchant-center/appeal-rejected
+- /google-merchant-center/missing-product-identifiers
+- /google-merchant-center/limited-performance-missing-identifiers
+- /google-merchant-center/gtin-mpn-brand
+- /google-merchant-center/identifier-exists
+- /google-merchant-center/destination-not-working
+- /google-merchant-center/shopify-feed-errors
+- /tiktok-shop/product-rejected
+- /tiktok-shop/violation-appeal
+- /tiktok-shop/account-suspended
+- /tiktok-shop/violation-points
+- /tiktok-shop/account-health-rating
+- /tiktok-shop/restricted-products
+- /tiktok-shop/product-listing-quality
+
+## What SellerFixHub Does
+- Explains platform issue messages in plain English
+- Suggests evidence to prepare before appealing
+- Shares common recovery steps based on community experience
+- Connects sellers with vetted independent experts
+- Provides a rule-based issue message explainer tool (no AI API required)
+
+## What SellerFixHub Does NOT Do
+- Guarantee product approval, account reinstatement, or appeal success
+- Represent Google, TikTok, Amazon, Shopify, or any marketplace
+- File appeals on behalf of sellers
+- Collect passwords, API keys, payment details, identity documents, or sensitive personal information
+- Operate as a law firm
+- Provide automatic appeal submission
+
+## Independent Disclaimer
+SellerFixHub is an independent educational and lead-matching resource. We are not affiliated with Google, TikTok, Amazon, Shopify, or any marketplace. We do not guarantee product approval, account reinstatement, appeal success, or review outcomes. Platform decisions are made by the platform.
+
+## Last Updated
+2026-05-31

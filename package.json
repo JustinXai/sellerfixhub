@@ -1,0 +1,41 @@
+{
+  "name": "sellerfixhub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "check:claims": "node scripts/check-claims.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:lead-form": "node scripts/check-lead-form.mjs",
+    "check:ui-content": "node scripts/check-ui-content.mjs",
+    "smoke:external": "node scripts/external-smoke.mjs",
+    "check:new-issues": "node scripts/check-new-issue-pages.mjs",
+    "check:url-style": "node scripts/check-url-style.mjs",
+    "check:issue-format": "node scripts/check-issue-format.mjs",
+    "check:thank-you": "node scripts/check-thank-you-page.mjs",
+    "check:conversion-paths": "node scripts/check-conversion-paths.mjs",
+    "check:ai-readable": "node scripts/check-ai-readable-output.mjs",
+    "check:gmc-money-cluster": "node scripts/check-gmc-money-cluster.mjs",
+    "validate": "npm run check:claims && npm run check:content && npm run check:links && npm run check:lead-form && npm run check:ui-content && npm run check:new-issues && npm run check:url-style && npm run check:issue-format && npm run check:thank-you && npm run check:conversion-paths && npm run check:ai-readable && npm run lint && npm run build",
+    "verify:online": "npm run validate && npm run smoke:external"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

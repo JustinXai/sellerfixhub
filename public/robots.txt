@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sellerfixhub.com/sitemap.xml
+Sitemap: https://sellerfixhub.com/sitemap-static.xml
