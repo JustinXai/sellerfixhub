@@ -11,15 +11,7 @@ const TALLY_EMBED_URL =
   "https://tally.so/embed/RGVlOQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
 const TALLY_NEW_TAB_URL = "https://tally.so/r/RGVlOQ";
 
-interface Props {
-  searchParams?: Promise<{ source?: string; platform?: string; issue?: string }>;
-}
-
-export default async function ExpertMatchingPage({ searchParams }: Props) {
-  const params = await searchParams;
-  const { source, platform, issue } = params ?? {};
-  const showContext = source === "issue_page" && platform && issue;
-
+export default function ExpertMatchingPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
       <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
@@ -40,11 +32,9 @@ export default async function ExpertMatchingPage({ searchParams }: Props) {
             </p>
           </div>
 
-          {showContext && (
-            <p className="text-xs text-slate-400 border border-slate-200 rounded-lg px-3 py-2">
-              Issue context: {platform.replace(/-/g, " ")} / {issue}
-            </p>
-          )}
+          <p className="text-xs text-slate-400 border border-slate-200 rounded-lg px-3 py-2">
+            Coming from an issue page? Your form submission still works, but issue context is no longer prefilled in the page URL.
+          </p>
 
           <div className="rounded-xl border border-slate-200 overflow-hidden" style={{ boxShadow: "0 1px 3px 0 rgb(15 23 42 / 0.06)" }}>
             <iframe
