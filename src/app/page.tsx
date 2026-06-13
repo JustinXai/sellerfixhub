@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "SellerFixHub – Fix Rejected Products, Feed Errors, and Seller Violations",
   description:
     "Paste a rejection, feed error, or violation message. Get a plain-English next-step checklist before you request another review.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
@@ -75,11 +76,13 @@ export default function HomePage() {
               {/* Proof metrics row */}
               <div className="mt-10 grid grid-cols-3 gap-6 max-w-sm">
                 <div>
-                  <p className="text-2xl font-semibold text-slate-950 leading-tight">25</p>
+                  <p className="text-2xl font-semibold text-slate-950 leading-tight">{issues.length}</p>
                   <p className="mt-0.5 text-xs text-stone-500 leading-snug">recovery guides</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-semibold text-slate-950 leading-tight">101</p>
+                  <p className="text-2xl font-semibold text-slate-950 leading-tight">
+                    {issues.reduce((acc, i) => acc + i.faqs.length, 0)}
+                  </p>
                   <p className="mt-0.5 text-xs text-stone-500 leading-snug">FAQ answers</p>
                 </div>
                 <div>
